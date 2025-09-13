@@ -56,7 +56,6 @@ class CoverageReporter:
 
         """
         link_to_swagger_json = f"{self.host}{path_to_swagger_json}"
-
         response = requests.get(
             link_to_swagger_json, auth=auth, cookies=cookies, verify=self.verify
         )
@@ -74,7 +73,6 @@ class CoverageReporter:
 
     def generate_report(self):
         inner_location = "swagger-coverage-commandline/bin/swagger-coverage-commandline"
-        
         cmd_path = os.path.join(os.path.dirname(__file__), inner_location)
         assert Path(
             cmd_path
